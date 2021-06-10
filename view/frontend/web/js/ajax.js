@@ -110,17 +110,10 @@ define([
             _findId: function (btn, oldAction, form) {
                 var self = this;
                 var id = $(btn).attr('data-product-id');
-
-                if($.isNumeric(id)) {
-                    return id;
-                }
-
+                if($.isNumeric(id)) return id;
                 var item = $(btn).closest('li.product-item');
                 id = $(item).find('[data-product-id]').attr('data-product-id');
-
-                if ($.isNumeric(id)) {
-                    return id;
-                }
+                if ($.isNumeric(id)) return id;
 
                 if (oldAction) {
                     var formData = oldAction.split('/');
@@ -132,9 +125,7 @@ define([
                         }
                     }
 
-                    if ($.isNumeric(id)) {
-                        return id;
-                    }
+                    if ($.isNumeric(id)) return id;
                 }
 
                 if (form) {
@@ -146,22 +137,19 @@ define([
                         }
                     });
 
-                    if ($.isNumeric(id)) {
-                        return id;
-                    }
+                    if ($.isNumeric(id)) return id;
                 }
 
                 var priceBox = $(btn).closest('.price-box.price-final_price');
                 id = $(priceBox).attr('data-product-id');
 
-                if ($.isNumeric(id)) {
-                    return id;
-                }
+                if ($.isNumeric(id)) return id;
 
                 return false;
             },
 
             _sendAjax: function (addUrl, data, oldAction, form=false) {
+                var body = $('body');
                 var options = this.options;
                 var self = this;
                 if(form){
@@ -178,14 +166,10 @@ define([
                     contentType: false,
                     processData: false,
                     success: function (data) {
-                        var _qsModalContent = '<div class="content-ajaxcart">quickview placeholder</div>';
-                        if(!$('#modals_ajaxcart').length){
-                            $(document.body).append('<div id="modals_ajaxcart" style="display:none">' + _qsModalContent + '</div>');
-                        }
-
-                        var _qsModal = $('#modals_ajaxcart .content-ajaxcart');
+                        if(!$('#modals_ajaxcart').length) body.append('<div id="modals_ajaxcart" style="display:none"></div>');
+                        var _qsModal = $('#modals_ajaxcart');
                         if (data.popup) {
-                            self._showPopup(_qsModal, _qsModalContent, data.popup);
+                            self._showPopup(_qsModal, data.popup);
                         } else if (data.error && data.view) {
                             /*show Quick View*/
                             var quickView = true;
@@ -200,13 +184,10 @@ define([
                                     self.quickview({url:options.quickViewUrl  + 'id/' + data['id']});
                                 }
                             } else {
-                                self._showPopup(_qsModal, _qsModalContent, data.error_info);
-                            }
-                        } else {
-                            if($('.modals-ajaxcart')){
-                                $('.modals-ajaxcart').remove();
+                                self._showPopup(_qsModal, data.error_info);
                             }
                         }
+
                         if(form) self.enableAddToCartButton(form);
                     },
                     error: function () {
@@ -215,28 +196,29 @@ define([
                 });
             },
 
-            _showPopup: function (_qsModal, _qsModalContent, data) {
-                self = this;
+            _showPopup: function (_qsModal, data) {
                 var body = $('body');
-                if(body.hasClass('open-quickview')){
-                    body.removeClass('open-quickview');
-                    body.find('.modals-quickview').remove();
-                }
-                if(_qsModal.length) $('#modals_ajaxcart').html(_qsModalContent);                
+                self = this;           
                 _qsModal.html(data);
-                modal({
-                    type: 'popup',
-                    modalClass: 'modals-ajaxcart',
-                    responsive: true, 
-                    buttons: false,
-                    focus:'#modals_ajaxcart .header',
-                    closed: function(){
-                        clearInterval(window.ajaxcart_countdown);
-                    }                           
-                }, _qsModal);
-                _qsModal.modal('openModal');
-                _qsModal.trigger('contentUpdated');
-                _qsModal.find('.loading-mask').hide();
+                if(!body.hasClass('open-ajaxcart')){
+                    self._closePopup();
+                    body.addClass('open-ajaxcart');
+                    var modals = body.find('.modals-ajaxcart');
+                    if(!modals.length){
+                        modal({
+                            type: 'popup',
+                            modalClass: 'modals-ajaxcart',
+                            responsive: true,
+                            innerScroll: true,
+                            buttons: false,
+                            closed: function(){
+                                body.removeClass('open-ajaxcart');                                       
+                            } 
+                        }, _qsModal);
+                    }
+                    _qsModal.modal('openModal');
+                    _qsModal.trigger('contentUpdated');
+                }
                 _qsModal.find('.btn-continue').on('click', function() {
                     self._closePopup();
                 });
@@ -245,9 +227,10 @@ define([
             },
 
             _closePopup: function(){
-                // $('.modals-ajaxcart, .modals-overlay').remove();
-                // $('body').removeClass('_has-modal');
-                $('.modals-ajaxcart').find('.action-close').trigger('click');
+                var $body = $('body');
+                $body.removeClass('open-minicart-modal open-ajaxcart open-quickview');
+                $body.find('.modal-popup .action-close').trigger('click');
+                $body.find('.modal-popup, .modals-overlay').remove();
                 clearInterval(window.ajaxcart_countdown);
             },
 
@@ -299,35 +282,35 @@ define([
             
             quickview: function () {
                 var obj = arguments[0];
-                var _qsModalContent = '<div class="content-quickview">quickview placeholder</div>';
-                if(!$('#modals_quickview').length){
-                    $(document.body).append('<div id="modals_quickview" style="display:none">' + _qsModalContent + '</div>');
-                }
-                var _qsModal = $('#modals_quickview .content-quickview');
+                var body = $('body');
+                if(!$('#modals_quickview').length) body.append('<div id="modals_quickview" style="display:none"></div>');
+                var _qsModal = $('#modals_quickview');
                 var quickajax= function(url){
-                    if(_qsModal.length) $('#modals_quickview').html(_qsModalContent);
-                    // _qsModal.trigger('contentUpdated');
                     $.ajax({
                         url:url,
                         type:'POST',
                         showLoader: true,
                         cache:false,   
                         success:function(data){
-                            _qsModal.html(data);
-                            modal({
-                                type: 'popup',
-                                modalClass: 'modals-quickview',
-                                responsive: true, 
-                                buttons: false,
-                                closed: function(){
-                                    $('.modals-quickview').remove();
-                                }                           
-                            }, _qsModal);
-                            var body = $('body');
-                            _qsModal.modal('openModal');
-                            body.addClass('open-quickview');
-                            _qsModal.trigger('contentUpdated');
-                            _qsModal.on('modalclosed', function(){body.removeClass('open-quickview');});
+                            _qsModal.html('<div class="content-quickview">' + data + '</div>');
+                            if(!body.hasClass('open-quickview')){
+                                body.addClass('open-quickview');
+                                var modalsQuickview = body.find('.modals-quickview');
+                                if(!modalsQuickview.length){
+                                    modal({
+                                        type: 'popup',
+                                        modalClass: 'modals-quickview',
+                                        responsive: true,
+                                        innerScroll: true,
+                                        buttons: false,
+                                        closed: function(){
+                                            body.removeClass('open-quickview');                                       
+                                        } 
+                                    }, _qsModal);
+                                }
+                                _qsModal.modal('openModal');
+                            }
+                            _qsModal.trigger('contentUpdated');                          
                         }
                     });
                     _qsModal.on('fotorama:load', function(){
@@ -342,7 +325,8 @@ define([
                         quickajax($(this).data('url'))
                     });
                 }
-            }, 
+            },
+
             addAllToCart: function() {
                 var self = this;
                 var options = this.options;
@@ -376,5 +360,6 @@ define([
             }
 
         });
+
     return $.magepow.ajaxcart;
 });
