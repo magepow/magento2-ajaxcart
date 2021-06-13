@@ -13,7 +13,7 @@ During the study of customer behavior on e-commerce websites, we found that inte
 
 With Magento 2 Ajax Cart Extension, Ajax technology has been added to the cart. Instead of navigating to the checkout page, an Ajax popup will appear with information about the image, name, product price, number of products in cart, total order payment, etc.
 
-![Magento 2 Ajax Cart Extension]()
+![Magento 2 Ajax Cart Extension](https://github.com/magepow/magento-2-ajax-cart/blob/master/media/magento-2-ajax-cart-1.gif)
 
 Customers can view product details quickly, add products to cart without leaving the current page, can continue shopping or redirect to the checkout page, enhancing the experience customer shopping.
 
@@ -24,7 +24,7 @@ With simple configuration, easy customization, use Magento 2 Ajax Cart Extension
 
 Ajax add to cart helps customers to order favorite items quickly and conveniently without being redirected to another page.
 Customers will see product details through a popup window, and select product attributes such as color, size, quantity and add that product to cart right through this popup.
-![Magento 2 Ajax Cart Extension]()
+![Magento 2 Ajax Cart Extension](https://github.com/magepow/magento-2-ajax-cart/blob/master/media/magento-2-ajax-cart-2.gif)
 
 **2. 2 amazing popup templates**
 
@@ -32,11 +32,11 @@ Customers will see product details through a popup window, and select product at
 
 Mini Popup
 
-![Magento 2 Ajax Cart Extension]()
+![Magento 2 Ajax Cart Extension](https://github.com/magepow/magento-2-ajax-cart/blob/master/media/magento-2-ajax-cart-3.png)
 
 Middle to cart sidebar Popup
 
-![Magento 2 Ajax Cart Extension]()
+![Magento 2 Ajax Cart Extension](https://github.com/magepow/magento-2-ajax-cart/blob/master/media/magento-2-ajax-cart-4.png)
 
 **3. Easy Customization**
 
