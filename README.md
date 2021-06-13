@@ -1,52 +1,87 @@
-## Magento 2 Ajax add to cart extension Free
+## Magento 2 Ajax Cart Extension
 
-**[Magento 2 Ajax add to cart extension by Magepow](https://magepow.com/magepow/magento-2-ajax-add-to-cart.html)** is a module that allows customers to add products to their shopping cart on the homepage, category page, product page, CMS, or any page on the website through the Ajax pop-up window.
+**[Magento 2 Ajax add to cart extension by Magepow](https://magepow.com/magepow/magento-2-ajax-add-to-cart.html)** is a module that allows customers to add products to their shopping cart on the homepage, category page, product page, CMS, or any page on the website through the Ajax pop-up window without having to redirect to another page. Completely reduce redirect wait times and improve the shopping experience.
 
-### Benefits
-Ajax (short for Asynchronous JavaScript and XML) is a technique that allows customers to change any part of the website without reloading the page. 
+### Description
+Currently, online shopping is becoming more and more popular and has become a favorite form of shopping because of its speed and simplicity.
 
-In the process of researching customer behavior on e-commerce websites, Magepow integrated Ajax into the 'Add to cart' button to reduce the time to navigate the page, thereby optimizing the customer shopping process. When a customer clicks on the 'Add to cart' button, instead of navigating to the check out page, an Ajax popup will appear with information about the image, name, product price, the number of products in the shopping cart. , total order payment. 
+When shopping online, customers don't want to be redirected to another page when they add items to their cart. They will get annoyed and impatient if they have to wait too long to load new pages like Product Detail Pages or Cart View Pages.
 
-Customers can continue to shop or redirect to the checkout page.
+Ajax (short for Asynchronous JavaScript and XML) is a technique that allows users to change any part of a web page without reloading the page.
 
-Easy to configure and customize. Centralized administration panel for easy setup and management. Use Magento_Ajax_add_to_cart_Free's built-in features to professionalize your website.
+During the study of customer behavior on e-commerce websites, we found that integrating Ajax into the “Add to Cart” button can reduce page navigation time, thereby optimizing the buying process of customers. So we created Magento 2 Ajax Cart Extension.
+
+With Magento 2 Ajax Cart Extension, Ajax technology has been added to the cart. Instead of navigating to the checkout page, an Ajax popup will appear with information about the image, name, product price, number of products in cart, total order payment, etc.
+
+Customers can view product details quickly, add products to cart without leaving the current page, can continue shopping or redirect to the checkout page, enhancing the experience. Customer shopping.
+
+With simple configuration, easy customization, use Magento 2 Ajax Cart Extension's built-in features to professionalize your website.
 
 ### Highlight Features 
-1: Enable/Disable Ajaxcart extension from the admin panel
+**1. Ajax add to cart**
 
-2: Choose to show / not show the page load icon
+Ajax add to cart helps customers to order favorite items quickly and conveniently without being redirected to another page.
+Customers will see product details through a popup window, and select product attributes such as color, size, quantity and add that product to cart right through this popup.
 
-3: Success Popup Setting
+**2. 2 amazing popup templates**
 
-- Select display/display, product image height, width
+2 amazing popup templates suitable for any kind of store: Mini Popup and Middle to cart sidebar.
 
-- Choose to show not show Product Price, 'Continue' Button, Countdown time for Button
+**3. Easy Customization**
 
-- Choose to show/not to show Cart Quantity and Cart Subtotal, 'Go to Checkout' link and Suggested Products
-
-4: Success Popup Design
-
+Store admin can easily customize the appearance of the pop-up to match the store theme.
 - Customize the color of text on buttons
-
 - Customize the text of “Continue” button, 'Continue' Button Color, 'Continue' Button Color on Hover
-
 - Customize the Text of 'View Cart' Button, 'View Cart' Button Color, 'View Cart' Button Color on Hover.
-
-- Customize Text of 'Free Shipping Message', Text of 'Congratulation Message'
-5: Quick View Popup Setting
-
+- Customize Text of 'Free Shipping Message', Text of 'Congratulation Message' 5: Quick View Popup Setting
 - Choose to show/not show the 'Go to Product' link
-
 - Choose to show/not show Additional Data
- 
-### [How does Magepow Ajax cart work?](https://www.youtube.com/watch?v=KVg1uew0hfU&t=15s)
+- …
+
+**4. Responsive**
+
+Magento 2 Ajax Cart Extension is responsive with all browsers and devices. In addition, you can also set responsiveness in different sizes.
+
+### Pro version with outstanding features
+
+| Features  | Free Version  | Pro Version |
+| :------------ |:---------------:| :-----:|
+|Ajax add to cart|:white_check_mark:|:white_check_mark:|
+|2 amazing popup templates|X|:white_check_mark:|
+|Mini Popup|:white_check_mark:|:white_check_mark:|
+|- Show Product Image|:white_check_mark:|:white_check_mark:|
+|- Image Width|:white_check_mark:|:white_check_mark:|
+|- Image Height|:white_check_mark:|:white_check_mark:|
+|- Show Product Price|:white_check_mark:|:white_check_mark:|
+|- Show 'Continue' Button|:white_check_mark:|:white_check_mark:|
+|- Countdown time for Button|:white_check_mark:|:white_check_mark:|
+|- Countdown|:white_check_mark:|:white_check_mark:|
+|- Show Cart Quantity and Cart Subtotal|:white_check_mark:|:white_check_mark:|
+|- Show 'Go to Checkout' link|:white_check_mark:|:white_check_mark:|
+|- Show Suggested Products|:white_check_mark:|:white_check_mark:|
+|- Title of Suggested Products Block|X|:white_check_mark:|
+|- Choose Suggested Products|X|:white_check_mark:|
+|- Number of Suggested Products|X|:white_check_mark:|
+|Middle to cart sidebar Popup|X|:white_check_mark:|
+|Success Popup Design|:white_check_mark:|:white_check_mark:|
+|Suggested Products Setting|X|:white_check_mark:|
+|Responsive|:white_check_mark:|:white_check_mark:|
+|Setting responsive|X|:white_check_mark:|
+
+Download the latest version of [Magento 2 Ajax Cart](https://magepow.com/magento-2-ajax-add-to-cart.html) at [Magepow.com](https://magepow.com/)
 
 [![Latest Stable Version](https://poser.pugx.org/magepow/ajaxcart/v/stable)](https://packagist.org/packages/magepow/ajaxcart)
 [![Total Downloads](https://poser.pugx.org/magepow/ajaxcart/downloads)](https://packagist.org/packages/magepow/ajaxcart)
 [![Daily Downloads](https://poser.pugx.org/magepow/ajaxcart/d/daily)](https://packagist.org/packages/magepow/ajaxcart)
+ 
+### Magento 2 Ajax cart extension user guide
+- [Video tutorial](https://www.youtube.com/watch?v=KVg1uew0hfU&t=15s)
 
-## 1. How to install Magento 2 Ajaxcart Free
-### ✓ Install Ajax add to cart for Magento 2 via composer (recommend)
+- [Document](http://docs.magepow.com/ajaxcart/)
+
+### How to install Magento 2 Ajax cart Free
+**Install Ajax add to cart for Magento 2 via composer (recommend)**
+
 Run the following command in Magento 2 root folder:
 
 ```
@@ -55,23 +90,7 @@ php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy -f
 ```
 
-## 2. Look in Frontend
-![ajaxcontact_submit-img](https://github.com/magepow/magento2-ajaxcart/blob/master/media/ajaxcart_frontend.png)
-
-## 3. Magento 2 Ajaxcart extension user guide
-[Document](https://docs.alothemes.com/m2/theme/gecko/#sub72)
-
-To Config and Manage Ajax Cart, go to *Admin Panel > Magiccart > ALO themes > Configuration > MAGEPOW > Ajax Cart as the image below*
-![ajaxcontact_submit-img](https://github.com/magepow/magento2-ajaxcart/blob/master/media/ajaxcart_backend.png)
-
-- General Options: Allow you Enable/Disable Ajax Cart and change 'Add to Cart' Button Selector
-- Success Popup Setting: Allow you change configs for Ajax Cart such as: Show product image or not, Size of image (Width, Height), show buttons ('Continue' Button, Countdown time for Button, 'Go to Checkout' link/button, Show Cart Quantity and Cart Subtotal and allow you can show Suggested Products.
-- Success Popup Design: Allow you config style for Ajax Cart such as Color of Text on Buttons, buttons color, buttons when hover, other texts...
-Quick View Popup Setting: Allow you can show/ disable 'Go to Product' link/button and show Additional Data of that product
-- General Add To Cart Bottom
-Allow you can Enable/Disable General Add To Cart Bottom and Height Scroll (The height of screen from the top of the web page to the appearance 'add to cart bottom').
-
-## Donation
+### Donation
 
 If this project help you reduce time to develop, you can give me a cup of coffee :) 
 
