@@ -228,7 +228,7 @@ define([
 
             _closePopup: function(){
                 var $body = $('body');
-                $body.removeClass('open-minicart-modal open-ajaxcart open-quickview');
+                $body.removeClass('open-minicart-modal open-ajaxcart open-quickview _has-modal');
                 $body.find('.modal-popup .action-close').trigger('click');
                 $body.find('.modal-popup, .modals-overlay').remove();
                 clearInterval(window.ajaxcart_countdown);
