@@ -169,7 +169,7 @@ define([
                         if(!$('#modals_ajaxcart').length) body.append('<div id="modals_ajaxcart" style="display:none"></div>');
                         var _qsModal = $('#modals_ajaxcart');
                         if (data.popup) {
-                            self._showPopup(_qsModal, data.popup);
+                            self._showPopup(_qsModal, '<div class="content-ajaxcart">' + data.popup + '</div>');
                         } else if (data.error && data.view) {
                             /*show Quick View*/
                             var quickView = true;
